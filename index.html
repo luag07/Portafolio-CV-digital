@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Luana Candela Galván — Desarrolladora Junior</title>
+  <meta name="description" content="Portfolio profesional de Luana Candela Galván. Estudiante de Computación con proyectos web reales y sólida formación técnica. Buenos Aires." />
+  <meta name="keywords" content="Luana Galván, desarrolladora junior, frontend, HTML CSS JavaScript, Java, SQL, Buenos Aires, portfolio, CV" />
+  <meta name="author" content="Luana Candela Galván" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Luana Candela Galván — Desarrolladora Junior" />
+  <meta property="og:description" content="Portfolio y CV profesional. Proyectos reales, formación técnica, potencial de crecimiento." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Manrope (única familia, múltiples pesos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="nav-inner">
+
+      <!-- Nav links (izquierda en desktop) -->
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Menú principal">
+        <a href="#inicio"      class="nav-link" data-section="inicio"      data-i18n="nav.home">Inicio</a>
+        <a href="#sobre-mi"    class="nav-link" data-section="sobre-mi"    data-i18n="nav.about">Sobre mí</a>
+        <a href="#habilidades" class="nav-link" data-section="habilidades" data-i18n="nav.skills">Habilidades</a>
+        <a href="#proyectos"   class="nav-link" data-section="proyectos"   data-i18n="nav.projects">Proyectos</a>
+        <a href="#formacion"   class="nav-link" data-section="formacion"   data-i18n="nav.education">Formación</a>
+        <a href="#contacto"    class="nav-link" data-section="contacto"    data-i18n="nav.contact">Contacto</a>
+      </nav>
+
+      <!-- Controles (derecha) -->
+      <div class="nav-controls">
+        <!-- Selector de idioma -->
+        <div class="lang-switcher" role="group" aria-label="Idioma / Language">
+          <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <!-- Hamburguesa (solo mobile) -->
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ══════════════════════════════════════════
+         1. HERO — layout editorial asimétrico
+    ══════════════════════════════════════════ -->
+    <section id="inicio" class="hero" aria-label="Presentación">
+
+      <!-- Columna de texto (izquierda, 58%) -->
+      <div class="hero-text reveal">
+        <p class="hero-label" data-i18n="hero.label">Desarrolladora Junior · Buenos Aires</p>
+
+        <h1 class="hero-name">
+          <span class="name-line">Luana</span>
+          <span class="name-line name-accent">Candela</span>
+          <span class="name-line">Galván</span>
+        </h1>
+
+        <p class="hero-tagline" data-i18n="hero.tagline">
+          Estudiante de Computación orientada al desarrollo de software.
+          Proyectos reales, formación técnica y muchas ganas de crecer.
+        </p>
+
+        <div class="hero-cta">
+          <!-- ════════════════════════════════════════
+               BOTÓN DESCARGAR CV
+               El PDF debe estar en: /assets/cv/cv-luana-galvan.pdf
+               Para actualizarlo en el futuro: reemplazá ese archivo
+               por tu nueva versión manteniendo el mismo nombre,
+               o cambiá el valor de "href" si usás otro nombre.
+          ════════════════════════════════════════ -->
+          <a href="assets/cv/cv-luana-galvan.pdf" class="btn btn--primary" download="CV-Luana-Candela-Galvan.pdf" data-i18n="hero.download">
+            <i data-lucide="download" aria-hidden="true"></i>
+            Descargar CV
+          </a>
+          <a href="#proyectos" class="btn btn--outline" data-i18n="hero.seeProjects">
+            Ver proyectos
+          </a>
+        </div>
+
+        <!-- Stack principal: reemplaza a las estadísticas numéricas -->
+        <div class="hero-stack" aria-label="Áreas principales de formación">
+          <span class="stack-pill" data-i18n="hero.stack1">Desarrollo Web</span>
+          <span class="stack-pill" data-i18n="hero.stack2">Java & POO</span>
+          <span class="stack-pill" data-i18n="hero.stack3">React</span>
+          <span class="stack-pill" data-i18n="hero.stack4">Aprendizaje continuo</span>
+        </div>
+      </div>
+
+      <!-- Columna de foto (derecha, 42%) — rectángulo editorial -->
+      <div class="hero-photo reveal delay-1">
+        <div class="photo-frame">
+          <img
+            src="images/perfil.jpg"
+            alt="Foto de perfil de Luana Candela Galván"
+            class="photo-img"
+            onerror="this.style.display='none'; document.getElementById('photoPH').style.display='flex';"
+          />
+          <div class="photo-placeholder" id="photoPH" aria-label="Foto de perfil — reemplazar con imagen real">
+            <i data-lucide="user-circle" aria-hidden="true"></i>
+            <span data-i18n="hero.photoHint">Reemplazá con tu foto</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         2. SOBRE MÍ
+    ══════════════════════════════════════════ -->
+    <section id="sobre-mi" class="section" aria-label="Sobre mí">
+      <div class="container">
+
+        <div class="section-label-row reveal">
+          <span class="section-label" data-i18n="about.label">Sobre mí</span>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- Texto principal -->
+          <div class="about-text reveal">
+            <h2 class="about-heading" data-i18n="about.heading">
+              Construyo cosas reales mientras aprendo.
+            </h2>
+            <p data-i18n="about.p1">
+              Soy Luana, estudiante de último año de la Secundaria Técnica en Computación (CABA).
+              Desde que empecé a programar, entendí que la mejor forma de aprender es construyendo
+              cosas que funcionen de verdad y que alguien pueda usar.
+            </p>
+            <p data-i18n="about.p2">
+              Tengo proyectos web publicados en producción, participé en la Copa Robótica Argentina 2025
+              donde mi equipo llegó a semifinales, y sigo sumando habilidades cada semana.
+              Me considero responsable, organizada y siempre dispuesta a pedir ayuda cuando no sé algo.
+            </p>
+            <p data-i18n="about.p3">
+              Busco mi primera experiencia profesional en un equipo donde pueda aportar,
+              seguir formándome y demostrar que el potencial bien dirigido vale tanto como
+              los años de experiencia.
+            </p>
+          </div>
+
+          <!-- Datos personales -->
+          <aside class="about-details reveal delay-1" aria-label="Datos personales">
+            <dl class="details-list">
+              <div class="detail-row">
+                <dt data-i18n="about.locationLabel">Ubicación</dt>
+                <dd>Monte Castro, CABA</dd>
+              </div>
+              <div class="detail-row">
+                <dt data-i18n="about.statusLabel">Estado</dt>
+                <dd data-i18n="about.statusVal">Búsqueda activa de empleo</dd>
+              </div>
+              <div class="detail-row">
+                <dt data-i18n="about.availLabel">Disponibilidad</dt>
+                <dd data-i18n="about.availVal">Part-time o práctica profesional</dd>
+              </div>
+              <div class="detail-row">
+                <dt data-i18n="about.langLabel">Idiomas</dt>
+                <dd data-i18n="about.langVal">Español (nativo) · Inglés (básico)</dd>
+              </div>
+              <div class="detail-row">
+                <dt data-i18n="about.interestLabel">Intereses</dt>
+                <dd data-i18n="about.interestVal">Desarrollo web · Robótica · UX</dd>
+              </div>
+            </dl>
+
+            <!-- Logro destacado -->
+            <div class="highlight-box">
+              <div class="highlight-icon" aria-hidden="true">
+                <i data-lucide="trophy"></i>
+              </div>
+              <div>
+                <p class="highlight-title" data-i18n="about.achieveTitle">Copa Robótica Argentina 2025</p>
+                <p class="highlight-sub" data-i18n="about.achieveSub">3.° puesto regional · Semifinalista nacional</p>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         3. HABILIDADES
+    ══════════════════════════════════════════ -->
+    <section id="habilidades" class="section section--tinted" aria-label="Habilidades">
+      <div class="container">
+
+        <div class="section-label-row reveal">
+          <span class="section-label" data-i18n="skills.label">Habilidades</span>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <h2 class="section-heading reveal" data-i18n="skills.heading">Tecnologías y competencias</h2>
+
+        <div class="skills-layout">
+
+          <!-- Bloque: Desarrollo web -->
+          <div class="skill-block reveal">
+            <h3 class="skill-block-title" data-i18n="skills.web">Desarrollo web</h3>
+            <ul class="skill-chips" role="list">
+              <li class="chip chip--strong">HTML5</li>
+              <li class="chip chip--strong">CSS3</li>
+              <li class="chip chip--mid">JavaScript</li>
+              <li class="chip chip--learning">React</li>
+            </ul>
+          </div>
+
+          <!-- Bloque: Programación -->
+          <div class="skill-block reveal delay-1">
+            <h3 class="skill-block-title" data-i18n="skills.prog">Programación</h3>
+            <ul class="skill-chips" role="list">
+              <li class="chip chip--mid">Java</li>
+              <li class="chip chip--mid">C</li>
+              <li class="chip chip--learning">MicroPython</li>
+              <li class="chip chip--learning">Arduino</li>
+            </ul>
+          </div>
+
+          <!-- Bloque: Datos y sistemas -->
+          <div class="skill-block reveal delay-2">
+            <h3 class="skill-block-title" data-i18n="skills.data">Datos y sistemas</h3>
+            <ul class="skill-chips" role="list">
+              <li class="chip chip--mid">SQL</li>
+              <li class="chip chip--mid">Redes</li>
+              <li class="chip chip--mid">Git / GitHub</li>
+              <li class="chip chip--mid">Hardware</li>
+            </ul>
+          </div>
+
+          <!-- Bloque: Soft skills -->
+          <div class="skill-block reveal delay-3">
+            <h3 class="skill-block-title" data-i18n="skills.soft">Competencias</h3>
+            <ul class="skill-chips" role="list">
+              <li class="chip chip--soft" data-i18n="skills.s1">Trabajo en equipo</li>
+              <li class="chip chip--soft" data-i18n="skills.s2">Resolución de problemas</li>
+              <li class="chip chip--soft" data-i18n="skills.s3">Pensamiento lógico</li>
+              <li class="chip chip--soft" data-i18n="skills.s4">Aprendizaje continuo</li>
+              <li class="chip chip--soft" data-i18n="skills.s5">Organización</li>
+            </ul>
+          </div>
+
+        </div>
+
+   <!-- Leyenda de nivel (Estructura Limpia y Definitiva) -->
+<div class="skill-legend reveal" aria-label="Leyenda de niveles">
+  <div class="legend-item legend-item--strong" data-i18n="skills.legStrong">Intermedio</div>
+  <div class="legend-item legend-item--mid" data-i18n="skills.legMid">Básico–Intermedio</div>
+  <div class="legend-item legend-item--learning" data-i18n="skills.legLearn">En aprendizaje</div>
+</div>
+
+
+    <!-- ══════════════════════════════════════════
+         4. PROYECTOS
+    ══════════════════════════════════════════ -->
+    <section id="proyectos" class="section" aria-label="Proyectos destacados">
+      <div class="container">
+
+        <div class="section-label-row reveal">
+          <span class="section-label" data-i18n="projects.label">Proyectos</span>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <h2 class="section-heading reveal" data-i18n="projects.heading">Lo que construí</h2>
+        <p class="section-sub reveal" data-i18n="projects.sub">
+          Tres proyectos publicados en producción, accesibles en cualquier dispositivo.
+        </p>
+
+        <div class="projects-grid">
+
+          <!-- ── Proyecto 1: Sistema Informes ── -->
+          <article class="project-card reveal" aria-label="Sistema de Informes">
+            <div class="card-image">
+              <!--
+                Reemplazá "images/proyecto-informes.jpg"
+                con una captura del proyecto (600×360 px recomendado).
+              -->
+              <img
+                src="images/proyecto-informes.png"
+                alt="Vista del Sistema de Informes"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('card-image--empty')"
+              />
+              <div class="card-image-fallback" aria-hidden="true">
+                <i data-lucide="file-text"></i>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <span class="card-category" data-i18n="p1.cat">Sistema web</span>
+              <h3 class="card-title" data-i18n="p1.title">Sistema de Informes</h3>
+              <p class="card-desc" data-i18n="p1.desc">
+                Plataforma para crear, organizar y visualizar informes digitales.
+                Diseñada para optimizar la gestión documental con una interfaz
+                clara e intuitiva.
+              </p>
+              <div class="card-techs" aria-label="Tecnologías">
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+              </div>
+              <div class="card-links">
+                <!-- ═══════════════════════════════════════════════════════
+                     CAMBIAR AQUÍ EL LINK DEL PROYECTO SISTEMA INFORMES
+                     Cuando publiques una nueva versión del proyecto:
+                     1) Reemplazá la URL dentro de href en la línea de abajo
+                        (la que dice https://luag07.github.io/SistemaInformes/)
+                     2) Si también cambia el repositorio de GitHub, actualizá
+                        el href del botón "GitHub" un poco más abajo.
+                     No es necesario tocar ninguna otra parte del archivo.
+                ═══════════════════════════════════════════════════════ -->
+                <a href="https://luag07.github.io/SistemaInformes/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm" data-i18n="btn.demo">
+                  <i data-lucide="external-link" aria-hidden="true"></i>
+                  Demo
+                </a>
+                <a href="https://github.com/luag07/SistemaInformes" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.5-4.3-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Proyecto 2: Vital Mirror Tech ── -->
+          <article class="project-card reveal delay-1" aria-label="Vital Mirror Tech">
+            <div class="card-image">
+              <!--
+                Reemplazá "images/proyecto-vitalmirror.jpg" con tu captura.
+              -->
+              <img
+                src="images/proyecto-vitalmirror.jpg"
+                alt="Vista de Vital Mirror Tech"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('card-image--empty')"
+              />
+              <div class="card-image-fallback" aria-hidden="true">
+                <i data-lucide="activity"></i>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <span class="card-category" data-i18n="p2.cat">Salud digital</span>
+              <h3 class="card-title" data-i18n="p2.title">Vital Mirror Tech</h3>
+              <p class="card-desc" data-i18n="p2.desc">
+                Aplicación web para el seguimiento de indicadores de salud personales.
+                Combina diseño centrado en el usuario con lógica de monitoreo
+                de datos en tiempo real.
+              </p>
+              <div class="card-techs" aria-label="Tecnologías">
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+              </div>
+              <div class="card-links">
+                <a href="https://luag07.github.io/VitalMirrorTech/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm" data-i18n="btn.demo">
+                  <i data-lucide="external-link" aria-hidden="true"></i>
+                  Demo
+                </a>
+                <a href="https://github.com/luag07/VitalMirrorTech" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.5-4.3-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Proyecto 3: Ranking de Películas ── -->
+          <article class="project-card reveal delay-2" aria-label="Ranking de Películas">
+            <div class="card-image">
+              <!--
+                Reemplazá "images/proyecto-ranking.jpg" con tu captura.
+              -->
+              <img
+                src="images/proyecto-ranking.jpg"
+                alt="Vista del Ranking de Películas"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('card-image--empty')"
+              />
+              <div class="card-image-fallback" aria-hidden="true">
+                <i data-lucide="star"></i>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <span class="card-category" data-i18n="p3.cat">Entretenimiento</span>
+              <h3 class="card-title" data-i18n="p3.title">Ranking de Películas</h3>
+              <p class="card-desc" data-i18n="p3.desc">
+                App interactiva para descubrir, calificar y ordenar películas favoritas.
+                Implementa manipulación del DOM, ordenamiento dinámico y almacenamiento
+                local para una experiencia fluida.
+              </p>
+              <div class="card-techs" aria-label="Tecnologías">
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+              </div>
+              <div class="card-links">
+                <a href="https://luag07.github.io/Ranking_Peliculas/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm" data-i18n="btn.demo">
+                  <i data-lucide="external-link" aria-hidden="true"></i>
+                  Demo
+                </a>
+                <a href="https://github.com/luag07/Ranking_Peliculas" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.5-4.3-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         5. FORMACIÓN Y EXPERIENCIA
+    ══════════════════════════════════════════ -->
+    <section id="formacion" class="section section--tinted" aria-label="Formación y experiencia">
+      <div class="container">
+
+        <div class="section-label-row reveal">
+          <span class="section-label" data-i18n="edu.label">Formación</span>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <h2 class="section-heading reveal" data-i18n="edu.heading">Recorrido académico</h2>
+
+        <div class="timeline">
+
+          <!-- Item 1: Secundaria Técnica -->
+          <div class="tl-item reveal">
+            <div class="tl-meta">
+              <span class="tl-date">2021 – <span data-i18n="edu.present">Actualidad</span></span>
+              <span class="tl-badge badge--edu" data-i18n="edu.badge1">Educación</span>
+            </div>
+            <div class="tl-body">
+              <h3 class="tl-title" data-i18n="edu.t1title">Secundaria Técnica en Computación</h3>
+              <p class="tl-org" data-i18n="edu.t1org">Orientación: Desarrollo de Software y Sistemas Informáticos · CABA</p>
+              <p class="tl-desc" data-i18n="edu.t1desc">
+                Último año en curso. Formación completa en programación, bases de datos, redes,
+                sistemas operativos, hardware y proyectos integradores desde primer año.
+              </p>
+              <div class="tl-tags">
+                <span class="tag">C</span><span class="tag">Java</span>
+                <span class="tag">SQL</span><span class="tag">Redes</span><span class="tag">Hardware</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Copa Robótica (logro) -->
+          <div class="tl-item reveal delay-1">
+            <div class="tl-meta">
+              <span class="tl-date">2025</span>
+              <span class="tl-badge badge--award" data-i18n="edu.badge2">Logro</span>
+            </div>
+            <div class="tl-body tl-body--featured">
+              <h3 class="tl-title" data-i18n="edu.t2title">Copa Robótica Argentina — Competencia Nacional</h3>
+              <p class="tl-org" data-i18n="edu.t2org">Equipo de 5 integrantes · 3.° puesto regional · Semifinalista nacional</p>
+              <p class="tl-desc" data-i18n="edu.t2desc">
+                Diseño, programación y pruebas de un robot autónomo en equipo.
+                Trabajo colaborativo bajo presión con resultados concretos en competencia oficial.
+              </p>
+              <div class="tl-tags">
+                <span class="tag">Arduino</span><span class="tag">MicroPython</span>
+                <span class="tag">Robótica</span><span class="tag">Teamwork</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Proyectos propios -->
+          <div class="tl-item reveal delay-2">
+            <div class="tl-meta">
+              <span class="tl-date">2024 – <span data-i18n="edu.present">Actualidad</span></span>
+              <span class="tl-badge badge--project" data-i18n="edu.badge3">Proyectos</span>
+            </div>
+            <div class="tl-body">
+              <h3 class="tl-title" data-i18n="edu.t3title">Proyectos web publicados</h3>
+              <p class="tl-org" data-i18n="edu.t3org">Desarrollo autodidacta · GitHub Pages</p>
+              <p class="tl-desc" data-i18n="edu.t3desc">
+                Diseño y despliegue de aplicaciones funcionales y accesibles en producción:
+                sistema de informes, plataforma de salud y ranking interactivo.
+              </p>
+              <div class="tl-tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span>
+                <span class="tag">JavaScript</span><span class="tag">GitHub Pages</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Formación continua -->
+          <div class="tl-item reveal delay-3">
+            <div class="tl-meta">
+              <span class="tl-date" data-i18n="edu.present">Actualidad</span>
+              <span class="tl-badge badge--cert" data-i18n="edu.badge4">Formación continua</span>
+            </div>
+            <div class="tl-body">
+              <h3 class="tl-title" data-i18n="edu.t4title">Cursos y certificaciones en curso</h3>
+              <p class="tl-desc" data-i18n="edu.t4desc">
+                Actualmente continúo ampliando mi formación mediante cursos y
+                certificaciones vinculadas al desarrollo de software y
+                tecnologías web, sumando nuevas herramientas a mi perfil técnico
+                de forma constante.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         6. CONTACTO
+    ══════════════════════════════════════════ -->
+    <section id="contacto" class="section" aria-label="Contacto">
+      <div class="container">
+
+        <div class="section-label-row reveal">
+          <span class="section-label" data-i18n="contact.label">Contacto</span>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="contact-layout">
+
+          <div class="contact-text reveal">
+            <h2 class="contact-heading" data-i18n="contact.heading">
+              ¿Tenés un equipo donde pueda aprender y aportar?
+            </h2>
+            <p data-i18n="contact.sub">
+              Estoy disponible para prácticas profesionales, empleo part-time
+              o cualquier oportunidad donde el potencial valga tanto como la
+              experiencia. Escribime sin compromiso.
+            </p>
+          </div>
+
+          <div class="contact-links reveal delay-1" role="list" aria-label="Formas de contacto">
+
+            <a href="mailto:luana.candela.galvan.07@gmail.com" class="contact-card" role="listitem" aria-label="Enviar email">
+              <div class="cc-icon" aria-hidden="true">
+                <i data-lucide="mail" aria-hidden="true"></i>
+              </div>
+              <div class="cc-text">
+                <span class="cc-label">Email</span>
+                <span class="cc-value">luana.candela.galvan.07@gmail.com</span>
+              </div>
+              <div class="cc-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+            </a>
+
+            <a href="https://github.com/luag07" target="_blank" rel="noopener noreferrer" class="contact-card" role="listitem" aria-label="Perfil GitHub">
+              <div class="cc-icon" aria-hidden="true">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.5-4.3-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22"/></svg>
+              </div>
+              <div class="cc-text">
+                <span class="cc-label">GitHub</span>
+                <span class="cc-value">github.com/luag07</span>
+              </div>
+              <div class="cc-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/luag07" target="_blank" rel="noopener noreferrer" class="contact-card" role="listitem" aria-label="Perfil LinkedIn">
+              <div class="cc-icon" aria-hidden="true">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+              </div>
+              <div class="cc-text">
+                <span class="cc-label">LinkedIn</span>
+                <span class="cc-value">linkedin.com/in/luag07</span>
+              </div>
+              <div class="cc-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">
+        © 2026 Luana Candela Galván.
+        <span data-i18n="footer.copy">Diseñado y desarrollado por mí.</span>
+      </p>
+      <div class="footer-links" aria-label="Redes sociales">
+        <a href="https://github.com/luag07" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.5-4.3-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/luag07" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+        </a>
+        <a href="mailto:luana.candela.galvan.07@gmail.com" aria-label="Email">
+          <i data-lucide="mail" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- ══════════════════���═══════════════════════
+       BOTÓN VOLVER ARRIBA
+  ══════════════════════════════════════════ -->
+  <button class="back-top" id="backTop" aria-label="Volver al inicio">
+    <i data-lucide="arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
